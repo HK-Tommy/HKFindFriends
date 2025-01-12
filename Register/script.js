@@ -10,6 +10,14 @@ function CheckPassword(inputtxt) {
     )
 };
 
+function GetParams() {
+    const urlParams = new URLSearchParams(window.location.search);
+    document.getElementById("Input_Email").value = urlParams.get('email');
+    document.getElementById("Input_Passwords").value = urlParams.get('passwords');
+    document.getElementById("Input_ComfirmPasswords").value = urlParams.get('passwords');
+}
+GetParams()
+
 function Complete() {
     Email = document.getElementById("Input_Email").value
     Passwords = document.getElementById("Input_Passwords").value
@@ -40,4 +48,8 @@ function Complete() {
             window.alert("請輸入正確的電郵地址 ! ")
             document.getElementById("Input_Email").value = ''
         }
+    }
+
+    function Login(){
+        window.location = window.Login + '?action=Login'
     }
