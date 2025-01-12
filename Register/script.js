@@ -51,5 +51,5 @@ function Complete() {
     }
 
     function Login(){
-        window.location = window.Login + '?action=Login'
+        window.location = window.location + '?action=Login'
     }
