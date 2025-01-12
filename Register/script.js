@@ -19,7 +19,11 @@ function Complete() {
         if (validateEmail(Email)){
             if (Passwords === ComformPasswords){
                 if (CheckPassword(Passwords)){
-                     window.location = window.location + '?email=' + Email + '&passwords=' + Passwords
+                    const urlParams = new URLSearchParams(window.location.search);
+                    urlParams.set('email', Email);
+                    urlParams.set('passwords', Passwords);
+
+                    window.location.search = urlParams;
                 }
                 else {
                     window.alert("密碼太弱了 ! 請重新設定 ! ")
