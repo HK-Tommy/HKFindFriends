@@ -1,3 +1,5 @@
+
+
 const validateEmail = (email) => {
     return email.match(
       /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
@@ -17,21 +19,17 @@ function GetParams() {
     document.getElementById("Input_ComfirmPasswords").value = urlParams.get('passwords');
 }
 GetParams()
-
-function Complete() {
-    Email = document.getElementById("Input_Email").value
-    Passwords = document.getElementById("Input_Passwords").value
-    ComformPasswords = document.getElementById("Input_ComfirmPasswords").value
+document.getElementById('Complete').addEventListener('click', function() {
+    const Email = document.getElementById("Input_Email").value
+    const Passwords = document.getElementById("Input_Passwords").value
+    const ComformPasswords = document.getElementById("Input_ComfirmPasswords").value
 
     if (Email != null && Passwords !=null && ComformPasswords != null)
         if (validateEmail(Email)){
             if (Passwords === ComformPasswords){
                 if (CheckPassword(Passwords)){
-                    const urlParams = new URLSearchParams(window.location.search);
-                    urlParams.set('email', Email);
-                    urlParams.set('passwords', Passwords);
 
-                    window.location.search = urlParams;
+                    window.location = window.location + '?email=' + Email + '&passwords=' + Passwords
                 }
                 else {
                     window.alert("密碼太弱了 ! 請重新設定 ! ")
@@ -49,7 +47,7 @@ function Complete() {
             document.getElementById("Input_Email").value = ''
         }
     }
-
-    function Login(){
+);
+    document.getElementById('signup').addEventListener('click', function() {
         window.location = window.location + '?action=Login'
-    }
+    })

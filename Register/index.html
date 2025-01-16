@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Login & Registration Form | CoderGirl</title>
+  <title id="Title">Login & Registration Form | CoderGirl</title>
   <!---Custom CSS File--->
   <link rel="stylesheet" href="style.css">
 </head>
@@ -18,16 +18,16 @@
         <input type="email" placeholder="Enter your email" id="Input_Email"/>
         <input type="password" placeholder="Create a password" id="Input_Passwords">
         <input type="password" placeholder="Confirm your password" id="Input_ComfirmPasswords">
-        <input type="button" class="button" value="繼續" onclick="Complete()">
+        <input type="button" class="button" value="繼續" id="Complete">
       </form>
       <div class="signup">
         <span class="signup" id="Text">已經有帳戶 ? 
-         <label for="check" onclick="Login()">前往登入</label>
+         <label for="check" id="signup">前往登入</label>
         </span>
       </div>
     </div>
   </div>
-
-  <script src="script.js"></script>
+  <script src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script>
+  <script  type="module" src="script.js"></script>
 </body>
 </html>
