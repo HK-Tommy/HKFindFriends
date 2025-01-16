@@ -1,5 +1,4 @@
 
-
 const validateEmail = (email) => {
     return email.match(
       /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
@@ -12,13 +11,14 @@ function CheckPassword(inputtxt) {
     )
 };
 
-function GetParams() {
-    const urlParams = new URLSearchParams(window.location.search);
-    document.getElementById("Input_Email").value = urlParams.get('email');
-    document.getElementById("Input_Passwords").value = urlParams.get('passwords');
-    document.getElementById("Input_ComfirmPasswords").value = urlParams.get('passwords');
+function GetReturnValue(){
+    if(window.location === 'https://hk-tommy.github.io/HKFindFriends/Register/index.html?action=persional'){
+        document.getElementById("Info_Account").style.display = 'none'
+        document.getElementById("Info_Persional").style.display = ''
+    }
 }
-GetParams()
+GetReturnValue()
+
 document.getElementById('Complete').addEventListener('click', function() {
     const Email = document.getElementById("Input_Email").value
     const Passwords = document.getElementById("Input_Passwords").value
