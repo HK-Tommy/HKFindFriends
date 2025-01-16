@@ -10,6 +10,14 @@ function CheckPassword(inputtxt) {
         /^[A-Za-z]\w{7,14}$/
     )
 };
+function GetParams() {
+    const urlParams = new URLSearchParams(window.location.search);
+    document.getElementById('Input_Email').value = urlParams.get('email');
+    document.getElementById('Input_Passwords').value = urlParams.get('passwords');
+    document.getElementById('Input_ComfirmPasswords').value = urlParams.get('passwords');
+}
+
+GetParams()
 
 function GetReturnValue(){
     if(window.location === 'https://hk-tommy.github.io/HKFindFriends/Register/index.html?action=persional'){
@@ -28,8 +36,7 @@ document.getElementById('Complete').addEventListener('click', function() {
         if (validateEmail(Email)){
             if (Passwords === ComformPasswords){
                 if (CheckPassword(Passwords)){
-
-                    window.location = window.location
+                    window.location = window.location + "?email=" + Email + '&passwords=' + Passwords
                 }
                 else {
                     window.alert("密碼太弱了 ! 請重新設定 ! ")
