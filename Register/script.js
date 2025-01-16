@@ -29,7 +29,7 @@ document.getElementById('Complete').addEventListener('click', function() {
             if (Passwords === ComformPasswords){
                 if (CheckPassword(Passwords)){
 
-                    window.location = window.location + '?email=' + Email + '&passwords=' + Passwords
+                    window.location = window.location
                 }
                 else {
                     window.alert("密碼太弱了 ! 請重新設定 ! ")
