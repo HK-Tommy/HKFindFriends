@@ -16,11 +16,12 @@ function GetParams() {
     document.getElementById('Input_Passwords').value = urlParams.get('passwords');
     document.getElementById('Input_ComfirmPasswords').value = urlParams.get('passwords');
     const action = urlParams.get("action")
+    const state = urlParams.get("state")
 
     if(action === 'persional'){
         document.getElementById("Info_Account").style.display = 'none'
         document.getElementById("Info_Persional").style.display = ''
-        if (document.getElementById('Input_UserName').value != ""){
+        if (state === 'completed'){
             document.getElementById('Input_UserName').value = urlParams.get('username');
             document.getElementById('Input_Birthday').value = urlParams.get('birthday');
             document.getElementById('gender').value = urlParams.get('gender');
