@@ -33,10 +33,41 @@
     <div class="registration form">
       <header>個人資料</header>
       <form action="#">
-        <input type="email" placeholder="Enter your email" id="Input_Email"/>
-        <input type="password" placeholder="Create a password" id="Input_Passwords">
-        <input type="password" placeholder="Confirm your password" id="Input_ComfirmPasswords">
-        <input type="button" class="button" value="繼續" id="Complete">
+        <input type="text" placeholder="Enter your username" id="Input_UserName"/>
+        <input placeholder="Date of birth" class="textbox-n" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="Input_Birthday" />
+        <label for="gender">性別</label>
+          <select id="gender" name="gender" class="form-control">
+            <option value="男性">男性</option>
+            <option value="女性">女性</option>
+          </select>
+          <br>
+
+        <label for="country">居住地區</label>
+            <select id="country" name="country" class="form-control">
+                <option value="中西南及離島區">中西南及離島區</option>
+                <option value="東區及灣仔區">東區及灣仔區</option>
+                <option value="觀塘區">觀塘區</option>
+                <option value="黃大仙及西貢區">黃大仙及西貢區</option>
+                <option value="九龍城及油尖旺">九龍城及油尖旺</option>
+                <option value="深水埗區">深水埗區</option>
+                <option value="荃灣及葵青區">荃灣及葵青區</option>
+                <option value="屯門區">屯門區</option>
+                <option value="元朗區">元朗區</option>
+                <option value="深水埗區">深水埗區</option>
+                <option value="沙田區">沙田區</option>
+                <option value="大埔及北區">大埔及北區</option>
+            </select>
+            <br>
+
+            <label for="language">主要溝通語言</label>
+            <select id="language" name="language" class="form-control">
+              <option value="廣東話">廣東話</option>
+              <option value="普通話">普通話</option>
+              <option value="英文">英文</option>
+              <option value="其他">其他</option>
+            </select>
+            <br>
+        <input type="button" class="button" value="繼續" id="Complete_PersionalInfo">
       </form>
       <div class="signup">
         <span class="signup" id="Text">已經有帳戶 ? 

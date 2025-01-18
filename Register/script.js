@@ -53,6 +53,17 @@ document.getElementById('Complete').addEventListener('click', function() {
         }
     }
 );
-    document.getElementById('signup').addEventListener('click', function() {
+document.getElementById('signup').addEventListener('click', function() {
         window.location = window.location + '?action=Login'
-    })
+})
+
+document.getElementById('Complete_PersionalInfo').addEventListener('click', function() {
+    const UserName = document.getElementById("Input_UserName").value;
+    const Birthday = document.getElementById("Input_Birthday").value;
+    const Gender = document.getElementById("gender").value;
+    const Country = document.getElementById("country").value;
+    const Language = document.getElementById("language").value; 
+    if(UserName != "" && Birthday != "" && Gender != "" && Country != "" && Language != ""){
+        window.location = 'https://hk-tommy.github.io/HKFindFriends/Register/index.html?action=persional&state=completed'
+    }
+})
