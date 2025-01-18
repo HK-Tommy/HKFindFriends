@@ -20,6 +20,13 @@ function GetParams() {
     if(action === 'persional'){
         document.getElementById("Info_Account").style.display = 'none'
         document.getElementById("Info_Persional").style.display = ''
+        if (document.getElementById('Input_UserName').value != ""){
+            document.getElementById('Input_UserName').value = urlParams.get('username');
+            document.getElementById('Input_Birthday').value = urlParams.get('birthday');
+            document.getElementById('gender').value = urlParams.get('gender');
+            document.getElementById('country').value = urlParams.get('country');
+            document.getElementById('language').value = urlParams.get('language');
+        }
     }
 }
 
@@ -60,10 +67,10 @@ document.getElementById('signup').addEventListener('click', function() {
 document.getElementById('Complete_PersionalInfo').addEventListener('click', function() {
     const UserName = document.getElementById("Input_UserName").value;
     const Birthday = document.getElementById("Input_Birthday").value;
-    const Gender = document.getElementById("gender").value;
+    const Gender = document.getElementById("gender").value; 
     const Country = document.getElementById("country").value;
     const Language = document.getElementById("language").value; 
     if(UserName != "" && Birthday != "" && Gender != "" && Country != "" && Language != ""){
-        window.location = 'https://hk-tommy.github.io/HKFindFriends/Register/index.html?action=persional&state=completed'
+        window.location = 'https://hk-tommy.github.io/HKFindFriends/Register/index.html?action=persional&state=completed&username=' + UserName + "&birthday=" + Birthday + "&gender=" + Gender + "&country=" + Country + "&language=" + Language
     }
 })
