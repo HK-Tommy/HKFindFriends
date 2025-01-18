@@ -71,6 +71,6 @@ document.getElementById('Complete_PersionalInfo').addEventListener('click', func
     const Country = document.getElementById("country").value;
     const Language = document.getElementById("language").value; 
     if(UserName != "" && Birthday != "" && Gender != "" && Country != "" && Language != ""){
-        window.location = 'https://hk-tommy.github.io/HKFindFriends/Register/index.html?action=persional&state=completed&username=' + UserName + "&birthday=" + Birthday + "&gender=" + Gender + "&country=" + Country + "&language=" + Language
+        window.location = window.location + '?state=completed&username=' + UserName + "&birthday=" + Birthday + "&gender=" + Gender + "&country=" + Country + "&language=" + Language
     }
 })
