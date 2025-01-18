@@ -27,6 +27,7 @@ function GetParams() {
             document.getElementById('gender').value = urlParams.get('gender');
             document.getElementById('country').value = urlParams.get('country');
             document.getElementById('language').value = urlParams.get('language');
+            console.log("SD")
         }
     }
 }
@@ -72,6 +73,6 @@ document.getElementById('Complete_PersionalInfo').addEventListener('click', func
     const Country = document.getElementById("country").value;
     const Language = document.getElementById("language").value; 
     if(UserName != "" && Birthday != "" && Gender != "" && Country != "" && Language != ""){
-        window.location = window.location + '?state=completed&username=' + UserName + "&birthday=" + Birthday + "&gender=" + Gender + "&country=" + Country + "&language=" + Language
+        window.location = window.location + '&state=completed&username=' + UserName + "&birthday=" + Birthday + "&gender=" + Gender + "&country=" + Country + "&language=" + Language
     }
 })
