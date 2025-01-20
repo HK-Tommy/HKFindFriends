@@ -26,8 +26,15 @@ function GetParams() {
             document.getElementById('gender').value = urlParams.get('gender');
             document.getElementById('country').value = urlParams.get('country');
             document.getElementById('language').value = urlParams.get('language');
-            console.log("SD")
+            document.getElementById('FirstInterest').value = urlParams.get('FirstInterest');
+            document.getElementById('SecondInterest').value = urlParams.get('SecondInterest');
+            document.getElementById('ThirdInterest').value = urlParams.get('ThirdInterest');
+            document.getElementById('SelfIntroduction').value = urlParams.get('SelfIntroduction');
         }
+    }
+    else if(action === "matchoption"){
+        document.getElementById("Info_Persional").style.display = 'none'
+        document.getElementById("Info_MatchOption").style.display = ''
     }
 }
 
@@ -71,7 +78,22 @@ document.getElementById('Complete_PersionalInfo').addEventListener('click', func
     const Gender = document.getElementById("gender").value; 
     const Country = document.getElementById("country").value;
     const Language = document.getElementById("language").value; 
+    const FirstInterest = document.getElementById("FirstInterest").value;
+    const SecondInterest = document.getElementById("SecondInterest").value;
+    const ThirdInterest = document.getElementById("ThirdInterest").value;
+    const SelfIntroduction = document.getElementById("SelfIntroduction").value;
+
     if(UserName != "" && Birthday != "" && Gender != "" && Country != "" && Language != ""){
-        window.location = window.location + '&state=completed&username=' + UserName + "&birthday=" + Birthday + "&gender=" + Gender + "&country=" + Country + "&language=" + Language
+        if(FirstInterest != SecondInterest && FirstInterest != ThirdInterest && SecondInterest != ThirdInterest){
+            if(SelfIntroduction != ''){
+                window.location = window.location + '&state=completed&username=' + UserName + "&birthday=" + Birthday + "&gender=" + Gender + "&country=" + Country + "&language=" + Language + "&FirstInterest=" + FirstInterest + "&SecondInterest=" + SecondInterest + "&ThirdInterest=" + ThirdInterest + "&SelfIntroduction=" + SelfIntroduction
+            }
+            else{
+                window.alert("需填寫自我簡介")
+            }
+        }
+        else{
+            window.alert("興趣不能重複")
+        }
     }
 })
