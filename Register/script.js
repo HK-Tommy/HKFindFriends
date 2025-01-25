@@ -34,6 +34,7 @@ function GetParams() {
     }
     else if(action === "matchoption"){
         document.getElementById("Info_Persional").style.display = 'none'
+        document.getElementById("Info_Account").style.display = 'none'
         document.getElementById("Info_MatchOption").style.display = ''
     }
 }

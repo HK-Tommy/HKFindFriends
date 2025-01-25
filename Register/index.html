@@ -183,13 +183,22 @@
     <input type="checkbox" id="check">
     <div class="registration form">
       <header>配對選項</header>
+      <p style="align-items: center;display:flex;justify-content: center">※首次註冊需要，日後可再更改 ! </p>
+      <br><hr><br>
       <form action="#">
-        <input type="email" placeholder="輸入你的興趣" id="Input_Email"/>
-        <input type="password" placeholder="Create a password" id="Input_Passwords">
-        <input type="password" placeholder="Confirm your password" id="Input_ComfirmPasswords">
+        <label for="MatchGenre">配對類型 : </label>
+        <select id="MatchGenre" name="MatchGenre" class="form-control">
+          <option value="普通朋友">普通朋友</option>
+          <option value="男女朋友">男女朋友</option>
+        </select>
+        <br>
+        <label for="AcceptApplication">接受申請 : </label>
+        <select id="AcceptApplication" name="AcceptApplication" class="form-control">
+          <option value="true">接受</option>
+          <option value="false">不接受</option>
+        </select>
         <input type="button" class="button" value="繼續" id="Complete">
       </form>
-      <input placeholder="Enter your email" id="Input_Email"/>
     </div>
   </div>
 
